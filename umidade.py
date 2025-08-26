@@ -12,9 +12,9 @@ PINO_LED_SECO = 26
 
 # Crie os objetos Pin e ADC com a configuração correta
 # ADC é a classe para leitura analógica
-sensor_umidade ADC(Pin(PINO_SENSOR_UMIDADE))
+sensor_umidade = ADC(Pin(PINO_SENSOR_UMIDADE))
 # O LED é uma saída digital
-led_seco Pin(PINO_LED_SECO, Pin.OUT)
+led_seco = Pin(PINO_LED_SECO, Pin.OUT)
 
 # Configure a resolução do ADC.
 # A resolução padrão é 10 bits (0-1023), mas vamos usar 12 bits para maior precisão (0-4095).
@@ -35,7 +35,7 @@ while True:
     # Solo seco: 4095 (ou próximo disso)
     # Solo úmido: 0 (ou próximo disso)
     # Ajuste este valor limite (por exemplo, 2000) com base nos seus testes. 
-    LIMIAR SECO = 2000
+    LIMIAR_SECO = 2000
 
     if valor_umidade > LIMIAR_SECO:
         # Se o solo estiver seco, acende o LED
